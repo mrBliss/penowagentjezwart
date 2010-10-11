@@ -17,7 +17,7 @@ public class Demo2a {
 	public static final float WHEEL_DIAMETER = 56.0f;
     public static final float TRACK_WIDTH = 112.0f;
     
-    public static final int LIGHT_TRESHOLD = 50;
+    public static final int LIGHT_TRESHOLD = 40;
 
 
 	public static void main(String[] aArg) throws Exception {
@@ -66,14 +66,15 @@ public class Demo2a {
 			public void action() {
 				
 				// Methode 1
-				int sweep = 10;
+				int sweep = 5;
 				while (!suppress) {
 					pilot.rotate((links ? sweep : -sweep), true);
-					links = !links;
 					while (!suppress && pilot.isMoving()) Thread.yield();
-					sweep += 10;
+					sweep += 15;
+					links = !links;
 				}
 				
+				//links = !links;
 				pilot.stop();
 				suppress = false;
 			}
