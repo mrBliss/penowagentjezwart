@@ -4,16 +4,16 @@ import lejos.util.ButtonCounter;
 
 public class Demo1 {
 
-    public static final float WHEEL_DIAMETER = 56.0f;
-    public static final float TRACK_WIDTH = 112.0f;
+    public static final float WHEEL_DIAMETER = 55.23f;
+    public static final float TRACK_WIDTH = 125.93f;
 
     TachoPilot pilot;
 
     public void go() {
+    	//pilot.setMoveSpeed(180.0f);
         while (true) {
             ButtonCounter bc = new ButtonCounter();
             bc.count("Hoeken / |zijde|?");
-            pilot.setMoveSpeed(720);
             int hoeken = bc.getLeftCount();
             int lengteZijde = 100 * bc.getRightCount();
 
